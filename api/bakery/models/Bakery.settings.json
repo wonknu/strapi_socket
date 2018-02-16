@@ -1,0 +1,16 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "bakery",
+    "description": "Dayuuum !"
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    }
+  }
+}

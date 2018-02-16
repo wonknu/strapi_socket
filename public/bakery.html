@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>bakery</title>
+    <style>
+      html, body { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+      label { display: block; margin-bottom: 10px; }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Add new delicious food</h1>
+
+      <label for="name">
+        <span>Name :</span>
+        <input type="text" name="name" id="name" />
+      </label>
+
+      <label for="rating">
+        <span>Rating :</span>
+        <select name="rating" id="rating">
+          <option value="1">1 star</option>
+          <option value="2">2 stars</option>
+          <option value="3">3 stars</option>
+          <option value="4">4 stars</option>
+          <option value="5">5 stars</option>
+        </select>
+      </label>
+
+      <button id="add">Add</button>
+
+      <div id="food"></div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      const name = document.getElementById('name');
+      const rating = document.getElementById('rating');
+      const add = document.getElementById('add');
+      const food = document.getElementById('food');
+
+      add.addEventListener('click', () => {
+        fetch('/bakery', {
+            method: 'post',
+            headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+            body: `name=${name.value}&rating=${rating.value}`
+          })
+          .then((res) => {
+              if (res.status !== 200) return;
+              res.json().then(data => console.log(data));
+            }
+          )
+          .catch(err => console.log('Fetch Error :-S', err));
+      });
+
+      socket.on('food_ready', res => food.innerHTML += `<div>- ${res.name} is ${res.rating}/5 so delicious</div>`);
+    </script>
+  </body>
+</html>
