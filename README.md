@@ -59,7 +59,11 @@ open `config/functions/bootstrap.js`  and create `public/bakery.html` [add this 
 
 ![log](tuto/img/screen-6.png)
 
-Now let's modify our html to create new bakery entries from our bakery.html file with [this code](tuto/3_create_data.md), after changing our code reload and set both name and rating value before submit with the add button. You can check that the entry has been saved by checking [/bakery](http://localhost:1337/bakery) api url with GET method, it should respond with an non empty array this time.
+Now let's modify our html to create new bakery entries from our bakery.html file with [this code](tuto/3_create_data.md), after changing our code reload and set both name and rating value before submit with the add button.
+
+![log](tuto/img/screen-7.png)
+
+You can check that the entry has been saved by checking [/bakery](http://localhost:1337/bakery) api url with GET method, it should respond with an non empty array this time.
 
 ```javascript
 [{"_id":"5a86fdc6323f050a985a164d","name":"cookie","rating":4,"__v":0,"id":"5a86fdc6323f050a985a164d"}]
