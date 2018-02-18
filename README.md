@@ -13,7 +13,7 @@ We don’t need alot of work to set up our API anymore we can focus on others fu
 before starting strapi you can do `npm ls strapi` which print something like this :
 ```
 strapi_socket@0.1.0 /path/to/project/strapi_socket
-└── strapi@3.0.0-alpha.9.3
+└── strapi@3.0.0-alpha.10.1
 ```
 
 so you know where is the strapi used and we can see this is the local strapi inside our project’s node_modules and not the global version. We can now start strapi by running
