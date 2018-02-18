@@ -16,14 +16,14 @@ create strapi project
 > Password:
 ```
 
-npm install strapi dependency
-```
-➜ npm i
-```
-
 go to your project root folder
 ```
 ➜ cd strapi_socket
+```
+
+npm install strapi dependency
+```
+➜ npm i
 ```
 
 install socket.io (currently socket.io@^2.0.4) as dependency
